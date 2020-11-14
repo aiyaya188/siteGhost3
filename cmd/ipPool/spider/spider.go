@@ -70,44 +70,48 @@ func GetTargetContent(target string) (err error) {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println("获取body")
-	tbody, err := wd.FindElement(selenium.ByTagName, "tbody")
-	if err != nil {
-		return
-	}
-	fmt.Println("获取tr")
-	tr, err := tbody.FindElements(selenium.ByTagName, "tr")
-	if err != nil {
-		return
-	}
-
-	fmt.Println("获取td")
-	for _, v := range tr {
-		tds, err := v.FindElements(selenium.ByTagName, "td")
+	source, _ := wd.PageSource()
+	fmt.Println("source:", source)
+	/*
+		fmt.Println("获取body")
+		tbody, err := wd.FindElement(selenium.ByTagName, "tbody")
 		if err != nil {
-			continue
+			return
 		}
-		if len(tds) < 6 {
-			continue
+		fmt.Println("获取tr")
+		tr, err := tbody.FindElements(selenium.ByTagName, "tr")
+		if err != nil {
+			return
 		}
-		text, _ := tds[0].Text()
-		fmt.Println("0:", text)
 
-		text, _ = tds[1].Text()
-		fmt.Println("1:", text)
+		fmt.Println("获取td")
+		for _, v := range tr {
+			tds, err := v.FindElements(selenium.ByTagName, "td")
+			if err != nil {
+				continue
+			}
+			if len(tds) < 6 {
+				continue
+			}
+			text, _ := tds[0].Text()
+			fmt.Println("0:", text)
 
-		text, _ = tds[2].Text()
-		fmt.Println("2:", text)
+			text, _ = tds[1].Text()
+			fmt.Println("1:", text)
 
-		text, _ = tds[3].Text()
-		fmt.Println("3:", text)
+			text, _ = tds[2].Text()
+			fmt.Println("2:", text)
 
-		text, _ = tds[4].Text()
-		fmt.Println("4:", text)
+			text, _ = tds[3].Text()
+			fmt.Println("3:", text)
 
-		text, _ = tds[5].Text()
-		fmt.Println("5:", text)
-	}
+			text, _ = tds[4].Text()
+			fmt.Println("4:", text)
+
+			text, _ = tds[5].Text()
+			fmt.Println("5:", text)
+		}
+	*/
 
 	fmt.Println("获取完毕")
 	return

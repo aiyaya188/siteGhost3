@@ -1,0 +1,17 @@
+[Logging]
+	Production =false 
+	Level      = "debug"
+	[Logging.File]
+		Enable = true		
+		Path = "/services/hgSpider/logs/spide-log.log"
+		Compress = true
+[DataSource]
+	URL = "root:Td867!@#aba@(127.0.0.1:3306)/wenda?charset=utf8&parseTime=True&loc=Local"
+	Dialect = "mysql"
+	Debug = true 
+[Server]
+    Mode = "debug"
+    Network = "tcp"
+	Bind   = ":5500" 
+
+
